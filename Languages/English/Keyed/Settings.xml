@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <ST_ToolTypes>Total number of tool types: {0}</ST_ToolTypes>
+    <ST_SurvivalTool>survival tool</ST_SurvivalTool>
+    <ST_NormalTool>normal tool</ST_NormalTool>
+</LanguageData>

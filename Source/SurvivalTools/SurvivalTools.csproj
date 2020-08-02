@@ -7,8 +7,8 @@
     <ProjectGuid>{8853D5B4-7350-4D62-B81F-949CFE84CF9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ModName</RootNamespace>
-    <AssemblyName>ModName</AssemblyName>
+    <RootNamespace>SurvivalTools</RootNamespace>
+    <AssemblyName>SurvivalTools</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.1\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.2\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,11 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.1.2654</Version>
-    </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.0.1</Version>
+      <Version>2.0.2</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -55,12 +52,59 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\WorkGiver_PlantsCut.cs" />
+    <Compile Include="AI\WorkGiver_GrowerHarvest.cs" />
+    <Compile Include="AI\WorkGiver_HarvestTrees.cs" />
+    <Compile Include="AI\WorkGiver_FellTrees.cs" />
+    <Compile Include="Alert\Alert_ColonistNeedsSurvivalTool.cs" />
+    <Compile Include="BaseMod.cs" />
+    <Compile Include="Harmony\StatPatch.cs" />
+    <Compile Include="SurvivalTools_Controller.cs" />
+    <Compile Include="DefOf\WorkGiverDefOf.cs" />
+    <Compile Include="DefOf\JobDefOf.cs" />
+    <Compile Include="Extensions\Utility.cs" />
+    <Compile Include="Harmony\ToolsUsedHandler.cs" />
+    <Compile Include="Harmony\Map_ToolTracker.cs" />
+    <Compile Include="Harmony\WorkGiver.cs" />
+    <Compile Include="Harmony\WorkGiver_GrowerSow.cs" />
+    <Compile Include="Harmony\SketchResolver_Monument.cs" />
+    <Compile Include="Harmony\RoofUtility.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolsFramework">
+      <HintPath>..\..\..\ToolsFramework\1.2\Assemblies\ToolsFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="TransformOnBuild" BeforeTargets="BeforeBuild">
     <PropertyGroup>
