@@ -3,4 +3,7 @@
     <ST_ToolTypes>Total number of tool types: {0}</ST_ToolTypes>
     <ST_SurvivalTool>survival tool</ST_SurvivalTool>
     <ST_NormalTool>normal tool</ST_NormalTool>
+
+    <ST_noToolWorkPenalty>Toolless penalty</ST_noToolWorkPenalty>
+    <ST_noToolWorkSpeed>Toolless stat penalty</ST_noToolWorkSpeed>
 </LanguageData>

@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.1\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -58,7 +58,9 @@
     <Compile Include="AI\WorkGiver_FellTrees.cs" />
     <Compile Include="Alert\Alert_ColonistNeedsSurvivalTool.cs" />
     <Compile Include="BaseMod.cs" />
+    <Compile Include="DefOf\PawnCapacityDefOf.cs" />
     <Compile Include="Harmony\StatPatch.cs" />
+    <Compile Include="PawnCapacity\PawnCapacityWorker_SurvivalTool.cs" />
     <Compile Include="SurvivalTools_Controller.cs" />
     <Compile Include="DefOf\WorkGiverDefOf.cs" />
     <Compile Include="DefOf\JobDefOf.cs" />
@@ -84,7 +86,7 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="ToolsFramework">
-      <HintPath>..\..\..\ToolsFramework\1.2\Assemblies\ToolsFramework.dll</HintPath>
+      <HintPath>..\..\..\ToolsFramework\1.1\Assemblies\ToolsFramework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">

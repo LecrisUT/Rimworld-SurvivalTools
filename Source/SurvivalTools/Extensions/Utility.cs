@@ -1,4 +1,5 @@
-﻿using ToolsFramework;
+﻿using System.Linq;
+using ToolsFramework;
 using Verse;
 
 namespace SurvivalTools
@@ -12,8 +13,15 @@ namespace SurvivalTools
             if (!pawn.CanUseTools(out var tracker))
                 return true;
             var bestTools = tracker.usedHandler.BestTool;
-            if (extension.toolTypes.Any(t => Settings.ST_toolTypes.Contains(t) && !bestTools.ContainsKey(t)))
+            var mapTools = pawn.MapHeld.GetComponent<Map_ToolTracker>().StoredTools;
+            foreach (var toolType in extension.toolTypes.Where(t => Settings.ST_toolTypes.Contains(t)))
+            {
+                if (bestTools.ContainsKey(toolType))
+                    continue;
+                if (mapTools.Any(t => t.ToolProperties.ToolTypes.Contains(toolType)))
+                    continue;
                 return false;
+            }
             return true;
         }
     }

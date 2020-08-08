@@ -15,7 +15,7 @@ namespace SurvivalTools.HarmonyPatches
             if (__result == null)
             {
                 if (__instance.def.GetModExtension<WorkGiver_Extension>() is WorkGiver_Extension ext && !ext.MeetsRequirementJobs(pawn))
-                    __result = PawnCapacityDefOf.Manipulation;
+                    __result = PawnCapacityDefOf.SurvivalTool;
             }
         }
     }
