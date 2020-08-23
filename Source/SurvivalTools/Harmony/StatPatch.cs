@@ -14,7 +14,7 @@ namespace SurvivalTools.Harmony
         {
             if (!pawn.CanUseTools() || !ToolType.jobToolType.TryGetValue(job.def, out var toolType))
                 return;
-            if (Settings.ST_toolTypes.Contains(toolType))
+            if (Settings.ST_toolTypes[toolType])
                 __result = Settings.NoToolWorkSpeed;
         }
     }

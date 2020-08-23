@@ -2,11 +2,11 @@
 <ModMetaData>
 	<name>[LC] Survival Tools</name>
 	<author>Lecris</author>
-	<packageId>Lecris.survivaltoolsreborn</packageId>
+	<packageId>Lecris.survivaltools</packageId>
 	<url>https://github.com/LecrisUT/Rimworld-SurvivalTools</url>
-	<description>(Empty)</description>
+	<description>A continuation of [XND]SurivalTools</description>
 	<supportedVersions>
-        <li>1.1</li>
+        <li>1.2</li>
     </supportedVersions>
 	<modDependencies>
     <li>

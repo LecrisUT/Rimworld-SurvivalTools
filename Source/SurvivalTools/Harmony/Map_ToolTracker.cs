@@ -2,16 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using ToolsFramework;
 using Verse;
 
 namespace SurvivalTools.Harmony
 {
-    [HarmonyPatch(typeof(Map_ToolTracker))]
-    [HarmonyPatch(nameof(Map_ToolTracker.BestTool))]
+    [HarmonyPatch]
     public static class Patch_Map_ToolTracker_BestTool
     {
+        public static IEnumerable<MethodBase> TargetMethods()
+        {
+            yield return AccessTools.Method(typeof(Map_ToolTracker), nameof(Map_ToolTracker.BestTool));
+            yield return AccessTools.Method(typeof(Map_ToolTracker), nameof(Map_ToolTracker.ClosestTool));
+        }
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionList = instructions.ToList();
@@ -33,9 +38,7 @@ namespace SurvivalTools.Harmony
                     }
                 }
                 if (brLabel.HasValue && instruction.labels.Contains(brLabel.Value))
-                {
                     Log.Warning("ST_BaseMessage".Translate() + "ST_Error_Harmony_MapToolTracker".Translate());
-                }
                 if (instruction.IsLdloc(val) && instructionList[i+1].LoadsConstant(1f) && instructionList[i+2].Branches(out _))
                 {
                     instructionList.RemoveAt(i + 1);

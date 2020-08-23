@@ -8,7 +8,7 @@ using Verse;
 
 namespace SurvivalTools.Harmony
 {
-    [HarmonyPatch(typeof(ToolsUsedHandler), "Update")]
+    //[HarmonyPatch(typeof(ToolsUsedHandler), "Update")]
     public static class Patch_ToolsUsedHandler_Update
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
