@@ -42,7 +42,11 @@ namespace SurvivalTools
 			var toolTypes = DefDatabase<ToolType>.AllDefsListForReading;
 			options.Label("ST_ToolTypes".Translate(toolTypes.Count));
 			Filter = options.TextEntryLabeled("Filter".Translate(), Filter, 1);
+#if V11
+			var itemsWindow = options.BeginSection(340f);
+#else
 			var itemsWindow = options.BeginSection_NewTemp(340f);
+#endif
 			itemsWindow.ColumnWidth = ((rect2.width - 50f) / 3f);
 			foreach (var toolType in toolTypes)
 			{
