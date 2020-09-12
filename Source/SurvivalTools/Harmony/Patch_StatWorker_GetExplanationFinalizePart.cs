@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -14,7 +16,7 @@ namespace SurvivalTools.Harmony
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionList = instructions.ToList();
-            var GetStatValue = AccessTools.Method(typeof(ToolExtensions), "GetStatValue");
+            var GetStatValue = AccessTools.Method(typeof(ToolExtensions), "GetValue", new Type[] { typeof(ToolsFramework.Tool), typeof(ToolType), typeof(StatDef), typeof(float) });
             var NoToolWorkSpeed = AccessTools.Method(typeof(Utility), nameof(Utility.NoToolWorkSpeed));
             for (int i = 0; i < instructionList.Count; i++)
             {

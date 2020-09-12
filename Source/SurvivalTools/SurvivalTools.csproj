@@ -94,6 +94,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AutoPatcher">
+      <HintPath>..\..\..\AutoPatcher\1.2\Assemblies\AutoPatcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="ToolsFramework">
       <HintPath>..\..\..\ToolsFramework\1.2\Assemblies\ToolsFramework.dll</HintPath>
       <Private>False</Private>
