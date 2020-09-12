@@ -13,7 +13,7 @@ namespace SurvivalTools
         {
             if (!Settings.DisableNotToolWork || !pawn.CanUseTools(out var tracker))
                 return true;
-            var bestTools = tracker.usedHandler.BestTool;
+            var bestTools = tracker.UsedHandler.BestTool;
             var mapTools = pawn.MapHeld.GetComponent<Map_ToolTracker>().StoredTools;
             foreach (var toolType in extension.toolTypes.Where(t => Settings.ST_toolTypes[t]))
             {

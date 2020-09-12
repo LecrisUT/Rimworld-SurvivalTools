@@ -83,14 +83,18 @@ namespace SurvivalTools
 				payload = false,
 			};
 		}
+		private List<ToolType> ST_toolTypes_Keys = new List<ToolType>();
+		private List<bool> ST_toolTypes_Values = new List<bool>();
 		public override void ExposeData()
         {
-			var allToolTypes = ToolType.allToolTypes;
-			var defaultSurvivalTools = allToolTypes.Select(t => Controller.defaultSurvivalTools.Contains(t)).ToList();
 			Scribe_Values.Look(ref noToolWorkPenalty, "noToolWorkPenalty");
 			Scribe_Values.Look(ref noToolWorkPenalty, "disableNoToolWork");
 			Scribe_Values.Look(ref noToolWorkSpeed, "noToolWorkSpeed", 0.3f);
-            Scribe_Collections.Look(ref ST_toolTypes, "ST_toolTypes", LookMode.Def, LookMode.Value, ref allToolTypes, ref defaultSurvivalTools);
+            Scribe_Collections.Look(ref ST_toolTypes, "ST_toolTypes", LookMode.Def, LookMode.Value, ref ST_toolTypes_Keys, ref ST_toolTypes_Values);
+			if (Scribe.mode == LoadSaveMode.LoadingVars)
+				foreach (var toolType in ToolType.allToolTypes)
+					if (!ST_toolTypes.ContainsKey(toolType))
+						ST_toolTypes.Add(toolType, Controller.defaultSurvivalTools.Contains(toolType));
 		}
     }
 }

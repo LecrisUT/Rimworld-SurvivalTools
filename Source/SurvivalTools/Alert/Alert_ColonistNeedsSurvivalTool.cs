@@ -36,7 +36,7 @@ namespace SurvivalTools
         {
             if (!pawn.CanUseTools(out var tracker))
                 return false;
-            var bestTools = tracker.usedHandler.BestTool;
+            var bestTools = tracker.UsedHandler.BestTool;
             if (tracker.NecessaryToolTypes.Any(t => Settings.ST_toolTypes[t] && bestTools[t] == null))
                 return true;
             return false;
@@ -45,7 +45,7 @@ namespace SurvivalTools
         private static string ToollessWorkTypesString(Pawn pawn)
         {
             var types = new List<string>();
-            var bestTools = pawn.GetComp<Pawn_ToolTracker>().usedHandler.BestTool;
+            var bestTools = pawn.GetComp<Pawn_ToolTracker>().UsedHandler.BestTool;
             pawn.GetComp<Pawn_ToolTracker>().NecessaryToolTypes.DoIf(t => Settings.ST_toolTypes[t] && bestTools[t] == null, t => types.Add(t.LabelCap));
             return GenText.ToCommaList(types);
         }
