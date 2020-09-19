@@ -14,7 +14,7 @@ namespace SurvivalTools.Harmony
     {
         public static IEnumerable<MethodBase> TargetMethods()
         {
-            yield return AccessTools.Method(typeof(Map_ToolTracker), nameof(Map_ToolTracker.BestTool));
+            yield return AccessTools.Method(typeof(Map_ToolTracker), "privateBestTool");
             yield return AccessTools.Method(typeof(Map_ToolTracker), nameof(Map_ToolTracker.ClosestTool));
         }
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
