@@ -6,7 +6,6 @@ using System.Linq;
 using System.Reflection.Emit;
 using ToolsFramework;
 using ToolsFramework.Harmony;
-using Verse;
 
 namespace SurvivalTools.Harmony
 {

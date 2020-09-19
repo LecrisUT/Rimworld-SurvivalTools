@@ -1,17 +1,17 @@
 ﻿using HarmonyLib;
 using Verse;
-using ToolsFramework;
+using Verse.AI;
 
 namespace SurvivalTools.Harmony
 {
     [HarmonyPatch(typeof(RoofUtility))]
-    [HarmonyPatch(nameof(RoofUtility.CanHandleBlockingThing))]
-    public static class Patch_RoofUtility_CanHandleBlockingThing
+    [HarmonyPatch(nameof(RoofUtility.HandleBlockingThingJob))]
+    public static class Patch_RoofUtility_HandleBlockingThingJob
     {
-        public static void Postfix(ref bool __result, Thing blocker, Pawn worker)
+        public static void Postfix(ref Job __result)
         {
-            if (blocker?.def.plant?.IsTree == true && !WorkGiverDefOf.FellTrees.GetModExtension<WorkGiver_Extension>().MeetsRequirementJobs(worker))
-                __result = false;
+            if (__result?.def == RimWorld.JobDefOf.CutPlant && __result.targetA.Thing.def.plant.IsTree)
+                __result.def = JobDefOf.FellTree;
         }
     }
 }
