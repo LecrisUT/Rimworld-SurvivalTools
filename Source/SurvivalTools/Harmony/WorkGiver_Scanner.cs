@@ -36,7 +36,7 @@ namespace SurvivalTools.Harmony
         [HarmonyPriority(1000)]
         public static void Postfix(ref Job __result, Pawn pawn)
         {
-            if (__result == null || !Settings.DisableNotToolWork || !ToolType.jobToolType.TryGetValue(__result.def, out var toolType) || !Settings.ST_toolTypes[toolType] || !pawn.CanUseTools(out var tracker))
+            if (__result == null || !Settings.DisableNotToolWork || !ToolsFramework.Dictionaries.jobToolType.TryGetValue(__result.def, out var toolType) || !Settings.ST_toolTypes[toolType] || !pawn.CanUseTools(out var tracker))
                 return;
             if (tracker.UsedHandler.BestTool[toolType] != null)
                 return;
