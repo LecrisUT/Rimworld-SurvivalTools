@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using ToolsFramework;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace SurvivalTools
 		private static bool noToolWorkPenalty = true;
         private static float noToolWorkSpeed = 0.3f;
 		private static bool disableNoToolWork = false;
+
+		public static bool alertColonistNeedsSurvivalTool = true;
+		public static int alertColonistNeedsSurvivalTool_Delay = 1;
 		public static bool DisableNotToolWork => noToolWorkPenalty && disableNoToolWork;
 		public static float NoToolWorkSpeed => noToolWorkPenalty ? disableNoToolWork ? 0f : noToolWorkSpeed : 1f;
 		public static Dictionary<ToolType, bool> ST_toolTypes = ToolType.allToolTypes.ToDictionary(t => t, t => Controller.defaultSurvivalTools.Contains(t));
@@ -25,6 +29,20 @@ namespace SurvivalTools
 			GUI.color = defaultColor;
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
+			float days;
+			float hours;
+			options.Gap();
+			options.CheckboxLabeled("ST_alertColonistNeedsSurvivalTool".Translate(), ref alertColonistNeedsSurvivalTool, "ST_alertColonistNeedsSurvivalTool_tooltip".Translate());
+			if (alertColonistNeedsSurvivalTool)
+			{
+				options.Gap();
+				days = Mathf.FloorToInt((float)alertColonistNeedsSurvivalTool_Delay / GenDate.TicksPerDay);
+				hours = ((float)alertColonistNeedsSurvivalTool_Delay - days * GenDate.TicksPerDay) / GenDate.TicksPerHour;
+				options.Label("ST_alertColonistNeedsSurvivalTool_Delay".Translate() + $"\t{days} " + "DaysLower".Translate() +
+					$"  {hours.ToString("F02")} " + "HoursLower".Translate(),
+					tooltip: "ST_alertColonistNeedsSurvivalTool_Delay_tooltip".Translate());
+				alertColonistNeedsSurvivalTool_Delay = Mathf.RoundToInt(options.Slider(alertColonistNeedsSurvivalTool_Delay, 1, GenDate.TicksPerDay));
+			}
 			options.Gap();
 			options.CheckboxLabeled("ST_noToolWorkPenalty".Translate(), ref noToolWorkPenalty, "ST_noToolWorkPenalty_tooltip".Translate());
 			if (noToolWorkPenalty)

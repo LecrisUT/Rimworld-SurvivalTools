@@ -4,6 +4,11 @@
     <ST_SurvivalTool>survival tool</ST_SurvivalTool>
     <ST_NormalTool>normal tool</ST_NormalTool>
 
+    <ST_alertColonistNeedsSurvivalTool>Missing SurvivalTools alert</ST_alertColonistNeedsSurvivalTool>
+    <ST_alertColonistNeedsSurvivalTool_tooltip>Trigger alert when pawns are missing a required SurvivalTool for the assigned jobs. It may overreport unnecessary tools.</ST_alertColonistNeedsSurvivalTool_tooltip>
+    <ST_alertColonistNeedsSurvivalTool_Delay>Alert check frequency</ST_alertColonistNeedsSurvivalTool_Delay>
+    <ST_alertColonistNeedsSurvivalTool_Delay_tooltip>In game time between each alert check.</ST_alertColonistNeedsSurvivalTool_Delay_tooltip>
+
     <ST_noToolWorkPenalty>Toolless penalty</ST_noToolWorkPenalty>
     <ST_noToolWorkPenalty_tooltip>Toggle penalty for work speed, yield and success chance if working without tools.</ST_noToolWorkPenalty_tooltip>
 

@@ -61,7 +61,21 @@ namespace SurvivalTools
         public override string GetLabel()
             => "ColonistNeedsSurvivalTool".Translate();
 
+        private AlertReport cachedReport = false;
+        private int nextAlertTick = 0;
+        private AlertReport Report
+        {
+            get
+            {
+                if (Find.TickManager.TicksGame > nextAlertTick)
+                {
+                    cachedReport = AlertReport.CulpritsAre(ToollessWorkers);
+                    nextAlertTick = Find.TickManager.TicksGame + Settings.alertColonistNeedsSurvivalTool_Delay;
+                }
+                return cachedReport;
+            }
+        }
         public override AlertReport GetReport()
-            => AlertReport.CulpritsAre(ToollessWorkers);
+            => Settings.alertColonistNeedsSurvivalTool ? Report : false;
     }
 }
