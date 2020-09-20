@@ -37,7 +37,7 @@ namespace SurvivalTools
             if (!pawn.CanUseTools(out var tracker))
                 return false;
             var bestTools = tracker.UsedHandler.BestTool;
-            if (tracker.NecessaryToolTypes.Any(t => Settings.ST_toolTypes[t] && bestTools[t] == null))
+            if (tracker.NecessaryToolTypes.Any(t => Dictionaries.SurvivalToolTypes[t] && bestTools[t] == null))
                 return true;
             return false;
         }
@@ -46,7 +46,7 @@ namespace SurvivalTools
         {
             var types = new List<string>();
             var bestTools = pawn.GetComp<Pawn_ToolTracker>().UsedHandler.BestTool;
-            pawn.GetComp<Pawn_ToolTracker>().NecessaryToolTypes.DoIf(t => Settings.ST_toolTypes[t] && bestTools[t] == null, t => types.Add(t.LabelCap));
+            pawn.GetComp<Pawn_ToolTracker>().NecessaryToolTypes.DoIf(t => Dictionaries.SurvivalToolTypes[t] && bestTools[t] == null, t => types.Add(t.LabelCap));
             return GenText.ToCommaList(types);
         }
 

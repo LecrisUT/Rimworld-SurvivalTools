@@ -8,6 +8,7 @@
 		<stuffCategories>
             <li>Stony</li>
             <li>Woody</li>
+            <li>Metallic</li>
         </stuffCategories>
         <smeltable>true</smeltable>
         <recipeMaker>
@@ -56,7 +57,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <FellingTool>0.7</FellingTool>
+                    <FellingTool>0.9</FellingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -101,8 +102,8 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <ConstructionTool>0.7</ConstructionTool>
-                    <MiningTool>0.7</MiningTool>
+                    <ConstructionTool>0.9</ConstructionTool>
+                    <MiningTool>0.9</MiningTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -147,7 +148,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <HarvestingTool>0.7</HarvestingTool>
+                    <HarvestingTool>0.9</HarvestingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -182,6 +183,7 @@
 			<WorkToMake>2000</WorkToMake>
         </statBases>
 		<stuffCategories>
+            <li>Stony</li>
             <li>Metallic</li>
         </stuffCategories>
         <smeltable>true</smeltable>
@@ -230,7 +232,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <FellingTool>1.0</FellingTool>
+                    <FellingTool>1.1</FellingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -274,7 +276,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <MiningTool>1.0</MiningTool>
+                    <MiningTool>1.1</MiningTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -317,7 +319,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <ConstructionTool>1.0</ConstructionTool>
+                    <ConstructionTool>1.1</ConstructionTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -360,7 +362,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <HarvestingTool>1.0</HarvestingTool>
+                    <HarvestingTool>1.1</HarvestingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -448,7 +450,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <FellingTool>1.2</FellingTool>
+                    <FellingTool>1.3</FellingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -505,7 +507,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <MiningTool>1.2</MiningTool>
+                    <MiningTool>1.3</MiningTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -565,7 +567,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <HarvestingTool>1.2</HarvestingTool>
+                    <HarvestingTool>1.3</HarvestingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -625,7 +627,7 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <ConstructionTool>1.2</ConstructionTool>
+                    <ConstructionTool>1.3</ConstructionTool>
                 </toolTypesValue>
             </li>
         </modExtensions>
@@ -681,10 +683,10 @@
         <modExtensions>
             <li Class="ToolsFramework.ToolProperties">
                 <toolTypesValue>
-                    <FellingTool>1.4</FellingTool>
-                    <MiningTool>1.4</MiningTool>
-                    <ConstructionTool>1.4</ConstructionTool>
-                    <HarvestingTool>1.4</HarvestingTool>
+                    <FellingTool>1.3</FellingTool>
+                    <MiningTool>1.3</MiningTool>
+                    <ConstructionTool>1.3</ConstructionTool>
+                    <HarvestingTool>1.3</HarvestingTool>
                 </toolTypesValue>
             </li>
         </modExtensions>

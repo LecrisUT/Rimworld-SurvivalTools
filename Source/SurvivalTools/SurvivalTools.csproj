@@ -71,6 +71,8 @@
     <Compile Include="AI\WorkGiver_FellTrees.cs" />
     <Compile Include="Alert\Alert_ColonistNeedsSurvivalTool.cs" />
     <Compile Include="BaseMod.cs" />
+    <Compile Include="Databases\DefaultLists.cs" />
+    <Compile Include="Databases\Dictionaries.cs" />
     <Compile Include="DefOf\ToolTypeDefOf.cs" />
     <Compile Include="Harmony\Patch_StatWorker_GetExplanationFinalizePart.cs" />
     <Compile Include="Harmony\StatPatch.cs" />

@@ -15,6 +15,8 @@
     <ST_disableNoToolWork>Forbid toolless work</ST_disableNoToolWork>
     <ST_disableNoToolWork_tooltip>Fully forbid working without tools</ST_disableNoToolWork_tooltip>
 
-    <ST_noToolWorkSpeed>Toolless stat penalty</ST_noToolWorkSpeed>
-    <ST_noToolWorkSpeed_tooltip>Work speed, yield and success chance when working without tools</ST_noToolWorkSpeed_tooltip>
+    <ST_noToolWorkFactor>Work speed stat penalty</ST_noToolWorkFactor>
+    <ST_noToolWorkFactor_tooltip>Work speed when working without tools</ST_noToolWorkFactor_tooltip>
+    <ST_noToolWorkOffset>Yield and success stat penalty</ST_noToolWorkOffset>
+    <ST_noToolWorkOffset_tooltip>Yield and success chance when working without tools</ST_noToolWorkOffset_tooltip>
 </LanguageData>
