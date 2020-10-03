@@ -1,11 +1,12 @@
 <Defs>
     <!-- Primitive -->
-    <ThingDef Name="SurvivalToolPrimitive" ParentName="TF_BaseTool" Abstract="True">
+    <ThingDef Name="SurvivalToolPrimitive" ParentName="BaseWeapon" Abstract="True">
+        <thingClass>ToolsFramework.Tool</thingClass>
         <techLevel>Neolithic</techLevel>
         <statBases>
-			<WorkToMake>1500</WorkToMake>
+            <WorkToMake>1500</WorkToMake>
         </statBases>
-		<stuffCategories>
+        <stuffCategories>
             <li>Stony</li>
             <li>Woody</li>
             <li>Metallic</li>
@@ -48,19 +49,19 @@
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/primal_axe</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
-		<costStuffCount>40</costStuffCount>
+        <costStuffCount>40</costStuffCount>
         <statBases>
             <Mass>2.5</Mass>
         </statBases>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <FellingTool>0.9</FellingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -97,16 +98,16 @@
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/primal_hammer</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <ConstructionTool>0.9</ConstructionTool>
                     <MiningTool>0.9</MiningTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -143,15 +144,15 @@
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/primal_sickle</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <HarvestingTool>0.9</HarvestingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -177,12 +178,13 @@
     </ThingDef>
 
     <!-- Medieval -->
-    <ThingDef Name="SurvivalToolMedieval" ParentName="TF_BaseTool" Abstract="True">
+    <ThingDef Name="SurvivalToolMedieval" ParentName="BaseWeapon" Abstract="True">
+        <thingClass>ToolsFramework.Tool</thingClass>
         <techLevel>Medieval</techLevel>
         <statBases>
-			<WorkToMake>2000</WorkToMake>
+            <WorkToMake>2000</WorkToMake>
         </statBases>
-		<stuffCategories>
+        <stuffCategories>
             <li>Stony</li>
             <li>Metallic</li>
         </stuffCategories>
@@ -225,17 +227,17 @@
             <texPath>Things/Item/Equipment/Tool/Axe</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-		<costStuffCount>40</costStuffCount>
+        <costStuffCount>40</costStuffCount>
         <statBases>
             <Mass>2.5</Mass>
         </statBases>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <FellingTool>1.1</FellingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -273,13 +275,13 @@
             <texPath>Things/Item/Equipment/Tool/Pickaxe</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <MiningTool>1.1</MiningTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -316,13 +318,13 @@
             <texPath>Things/Item/Equipment/Tool/Hammer</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <ConstructionTool>1.1</ConstructionTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -359,13 +361,13 @@
             <texPath>Things/Item/Equipment/Tool/Sickle</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <HarvestingTool>1.1</HarvestingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -390,8 +392,9 @@
         </thingCategories>
     </ThingDef>
     <!-- industrial tools -->
-	
-	<ThingDef Name="SurvivalToolIndustrial" ParentName="TF_BaseTool" Abstract="True">
+
+    <ThingDef Name="SurvivalToolIndustrial" ParentName="BaseWeapon" Abstract="True">
+        <thingClass>ToolsFramework.Tool</thingClass>
         <techLevel>Industrial</techLevel>
         <statBases>
             <WorkToMake>5000</WorkToMake>
@@ -423,37 +426,37 @@
         </comps>
     </ThingDef>
 
-	<ThingDef ParentName="SurvivalToolIndustrial">
+    <ThingDef ParentName="SurvivalToolIndustrial">
         <defName>SurvivalTools_Chainsaw</defName>
         <label>Chainsaw</label>
         <description>Effective at chopping down trees with its spinning chain. This can also be used as a brutal melee weapon in a pinch.</description>
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/Chainsaw</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
         <statBases>
             <Mass>9</Mass>
         </statBases>
-		<costStuffCount>20</costStuffCount>
+        <costStuffCount>20</costStuffCount>
         <stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
-		<costList>
-		  <ComponentIndustrial>1</ComponentIndustrial>
-		  <Steel>10</Steel>
-		  <Chemfuel>55</Chemfuel>
-		</costList>
+        <costList>
+            <ComponentIndustrial>1</ComponentIndustrial>
+            <Steel>10</Steel>
+            <Chemfuel>55</Chemfuel>
+        </costList>
         <equippedStatOffsets>
             <MoveSpeed>-0.3</MoveSpeed>
         </equippedStatOffsets>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <FellingTool>1.3</FellingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -483,34 +486,34 @@
             <researchPrerequisite>ChainsawResearch</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
-	
-	<ThingDef ParentName="SurvivalToolIndustrial">
+
+    <ThingDef ParentName="SurvivalToolIndustrial">
         <defName>SurvivalTools_Jackhammer</defName>
         <label>Jackhammer</label>
         <description>Effective at mining stones. Not really useful as a melee weapon.</description>
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/JackHammer</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
         <statBases>
             <Mass>11</Mass>
         </statBases>
-		<costStuffCount>16</costStuffCount>
-		<costList>
-		  <ComponentIndustrial>2</ComponentIndustrial>
-		  <Steel>40</Steel>
-		</costList>
+        <costStuffCount>16</costStuffCount>
+        <costList>
+            <ComponentIndustrial>2</ComponentIndustrial>
+            <Steel>40</Steel>
+        </costList>
         <equippedStatOffsets>
             <MoveSpeed>-0.32</MoveSpeed>
         </equippedStatOffsets>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <MiningTool>1.3</MiningTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -527,7 +530,7 @@
                     <li>Poke</li>
                 </capacities>
                 <power>14.1</power>
-				<armorPenetration>0.3</armorPenetration>
+                <armorPenetration>0.3</armorPenetration>
                 <cooldownTime>2.9</cooldownTime>
             </li>
         </tools>
@@ -541,36 +544,36 @@
             <researchPrerequisite>GasCompressionResearch</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
-	
-	<ThingDef ParentName="SurvivalToolIndustrial">
+
+    <ThingDef ParentName="SurvivalToolIndustrial">
         <defName>SurvivalTools_Shovel</defName>
         <label>Shovel</label>
         <description>Effective at digging out plants. Effective as melee weapon. Empreror approves.</description>
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/Shovel</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
         <statBases>
             <Mass>5</Mass>
         </statBases>
-		<costStuffCount>15</costStuffCount>
+        <costStuffCount>15</costStuffCount>
         <stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
-		<costList>
-		  <WoodLog>20</WoodLog>
-		</costList>
+        <costList>
+            <WoodLog>20</WoodLog>
+        </costList>
         <equippedStatOffsets>
             <MoveSpeed>-0.1</MoveSpeed>
         </equippedStatOffsets>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <HarvestingTool>1.3</HarvestingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -587,7 +590,7 @@
                     <li>Cut</li>
                 </capacities>
                 <power>17.1</power>
-				<armorPenetration>0.3</armorPenetration>
+                <armorPenetration>0.3</armorPenetration>
                 <cooldownTime>1.78</cooldownTime>
             </li>
         </tools>
@@ -602,7 +605,7 @@
             <researchPrerequisite>Smithing</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
-	
+
     <ThingDef ParentName="SurvivalToolIndustrial">
         <defName>SurvivalTools_BuildingOmnitool</defName>
         <label>Construction omnitool</label>
@@ -610,27 +613,27 @@
         <graphicData>
             <texPath>Things/Item/Equipment/Tool/ConstructionTool</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>	 
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
         <statBases>
             <Mass>5</Mass>
         </statBases>
-		<costStuffCount>20</costStuffCount>
-		<costList>
-		  <ComponentIndustrial>4</ComponentIndustrial>
-		  <Chemfuel>20</Chemfuel>
-		  <Steel>28</Steel>
-		</costList>
+        <costStuffCount>20</costStuffCount>
+        <costList>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <Chemfuel>20</Chemfuel>
+            <Steel>28</Steel>
+        </costList>
         <equippedStatOffsets>
             <MoveSpeed>-0.1</MoveSpeed>
         </equippedStatOffsets>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <ConstructionTool>1.3</ConstructionTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>
@@ -645,7 +648,7 @@
                 <capacities>
                     <li>Stab</li>
                 </capacities>
-				<armorPenetration>0.6</armorPenetration>
+                <armorPenetration>0.6</armorPenetration>
                 <power>20.1</power>
                 <cooldownTime>2.78</cooldownTime>
             </li>
@@ -660,10 +663,11 @@
             <researchPrerequisite>BuildingToolResearch</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
-	
+
     <!-- Glitterworld Multitool -->
 
-    <ThingDef ParentName="TF_BaseTool">
+    <ThingDef ParentName="BaseWeapon">
+        <thingClass>ToolsFramework.Tool</thingClass>
         <defName>SurvivalTools_Multitool</defName>
         <label>glitterworld multitool</label>
         <description>A high-tech set of tools commonly used by domestic mechanoids in glitterworld societies, though also usable by humanoids due to their physiological similarities.</description>
@@ -680,8 +684,8 @@
             <texPath>Things/Item/Equipment/Tool/GlitterworldMultitool</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <modExtensions>
-            <li Class="ToolsFramework.ToolProperties">
+        <comps>
+            <li Class="ToolsFramework.CompProperties_Tool">
                 <toolTypesValue>
                     <FellingTool>1.3</FellingTool>
                     <MiningTool>1.3</MiningTool>
@@ -689,7 +693,7 @@
                     <HarvestingTool>1.3</HarvestingTool>
                 </toolTypesValue>
             </li>
-        </modExtensions>
+        </comps>
         <tools>
             <li>
                 <label>handle</label>

@@ -46,8 +46,8 @@ namespace SurvivalTools.Harmony
                 var reservation = map.reservationManager;
                 var faction = pawn.Faction;
                 var assignmentFilter = tracker.ToolAssignment.filter;
-                if (pawn.MapHeld.GetComponent<Map_ToolTracker>().StoredTools.Any(t => t.ToolTypes.Contains(toolType) && !t.IsForbidden(pawn) && assignmentFilter.Allows(t) &&
-                (reservation.ReservedBy(t,pawn) || !reservation.IsReservedByAnyoneOf(t, faction))))
+                if (pawn.MapHeld.GetMapToolTracker().StoredToolInfos.Any(t => t.comp.CompProp.ToolTypes.Contains(toolType) && !t.tool.IsForbidden(pawn) && assignmentFilter.Allows(t.tool) &&
+                (reservation.ReservedBy(t.tool,pawn) || !reservation.IsReservedByAnyoneOf(t.tool, faction))))
                     return;
             }
 #if DEBUG

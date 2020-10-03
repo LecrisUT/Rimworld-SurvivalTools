@@ -16,7 +16,7 @@ namespace SurvivalTools.Harmony
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionList = instructions.ToList();
-            var GetValue = AccessTools.Method(typeof(ToolExtensions), nameof(ToolExtensions.GetValue), new Type[] { typeof(ToolsFramework.Tool), typeof(ToolType), typeof(float) });
+            var GetValue = AccessTools.Method(typeof(ToolExtensions), nameof(ToolExtensions.GetValue), new Type[] { typeof(ToolComp), typeof(ToolType), typeof(float) });
             var NoToolWorkSpeed = AccessTools.Method(typeof(Utility), nameof(Utility.NoToolWorkSpeed));
             LocalVar currVal = null;
             LocalVar toolType = null;
@@ -34,12 +34,17 @@ namespace SurvivalTools.Harmony
                     toolType = instructionList[i - 2].ToLocalVar();
                     
                 }
-                if (currVal != null && instruction.IsLdloc(currVal) && instructionList[i + 1].LoadsConstant(1f) && instructionList[i + 2].Branches(out _))
+                if (currVal != null && instruction.IsLdloc(currVal) && instructionList[i + 1].LoadsConstant(1f))
                 {
+                    CodeInstruction loadToolType;
+                    if (toolType.builder != null)
+                        loadToolType = new CodeInstruction(OpCodes.Ldloc_S, toolType.builder);
+                    else
+                        loadToolType = new CodeInstruction(OpCodes.Ldloc_S, toolType.index);
                     instructionList.RemoveAt(i + 1);
                     instructionList.InsertRange(i + 1, new List<CodeInstruction>()
                     {
-                        new CodeInstruction(OpCodes.Ldloc_S, toolType.index),
+                        loadToolType,
                         new CodeInstruction(OpCodes.Call, NoToolWorkSpeed),
                     });
                     break;

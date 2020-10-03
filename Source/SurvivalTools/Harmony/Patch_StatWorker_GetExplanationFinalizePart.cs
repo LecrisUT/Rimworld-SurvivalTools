@@ -15,7 +15,7 @@ namespace SurvivalTools.Harmony
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             var instructionList = instructions.ToList();
-            var TryGetValue = AccessTools.Method(typeof(ToolExtensions), nameof(ToolExtensions.TryGetValue), new Type[] { typeof(Tool), typeof(ToolType), typeof(StatDef), typeof(float).MakeByRefType(), typeof(float).MakeByRefType() });
+            var TryGetValue = AccessTools.Method(typeof(ToolExtensions), nameof(ToolExtensions.TryGetValue), new Type[] { typeof(ToolComp), typeof(ToolType), typeof(StatDef), typeof(float).MakeByRefType(), typeof(float).MakeByRefType()});
             var Helper = AccessTools.Method(typeof(Patch_Patch_StatWorker_GetExplanationFinalizePart), nameof(Patch_Patch_StatWorker_GetExplanationFinalizePart.Helper));
             for (int i = 0; i < instructionList.Count; i++)
             {
@@ -30,10 +30,10 @@ namespace SurvivalTools.Harmony
                     instructionList.InsertRange(i + 1, new List<CodeInstruction>
                     {
                         new CodeInstruction(OpCodes.Brtrue_S, label),
-                        instructionList[i-4],
-                        instructionList[i-3],
-                        instructionList[i-2],
-                        instructionList[i-1],
+                        instructionList[i - 4],
+                        instructionList[i - 3],
+                        instructionList[i - 2],
+                        instructionList[i - 1],
                         new CodeInstruction(OpCodes.Call, Helper),
                     });
                 }

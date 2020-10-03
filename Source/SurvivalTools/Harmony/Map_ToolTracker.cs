@@ -15,12 +15,12 @@ namespace SurvivalTools.Harmony
         public static IEnumerable<MethodBase> TargetMethods()
         {
             yield return AccessTools.Method(typeof(Map_ToolTracker), "privateBestTool");
-            yield return AccessTools.Method(typeof(Map_ToolTracker), nameof(Map_ToolTracker.ClosestTool));
+            yield return AccessTools.Method(typeof(Map_ToolTracker), nameof(Map_ToolTracker.ClosestToolInfo));
         }
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionList = instructions.ToList();
-            var TryGetValue = AccessTools.Method(typeof(ToolExtensions), "TryGetValue", new Type[] { typeof(ToolsFramework.Tool), typeof(ToolType), typeof(float).MakeByRefType() });
+            var TryGetValue = AccessTools.Method(typeof(ToolExtensions), "TryGetValue", new Type[] { typeof(ToolComp), typeof(ToolType), typeof(float).MakeByRefType()});
             var NoToolWorkSpeed = AccessTools.Method(typeof(Utility), nameof(Utility.NoToolWorkSpeed));
             LocalBuilder val = null;
             Label? brLabel = null;
@@ -29,7 +29,14 @@ namespace SurvivalTools.Harmony
                 var instruction = instructionList[i];
                 if (instruction.Calls(TryGetValue))
                 {
-                    val = instructionList[i - 1].operand as LocalBuilder;
+                    for (int j = 1; j < i; j++)
+                    {
+                        if (instructionList[i - 1].operand is LocalBuilder builder && builder.LocalType == typeof(float))
+                        {
+                            val = builder;
+                            break;
+                        }
+                    }
                     var nextInstruction = instructionList[i + 1];
                     if (!nextInstruction.Branches(out brLabel))
                     {
