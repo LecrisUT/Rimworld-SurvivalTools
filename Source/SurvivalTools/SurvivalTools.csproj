@@ -74,8 +74,7 @@
     <Compile Include="Databases\DefaultLists.cs" />
     <Compile Include="Databases\Dictionaries.cs" />
     <Compile Include="DefOf\ToolTypeDefOf.cs" />
-    <Compile Include="Harmony\Patch_StatWorker_GetExplanationFinalizePart.cs" />
-    <Compile Include="Harmony\StatPatch.cs" />
+    <Compile Include="Harmony\StatPart_Tool.cs" />
     <Compile Include="Harmony\WorkGiver_Scanner.cs" />
     <Compile Include="SurvivalTools_Controller.cs" />
     <Compile Include="DefOf\WorkGiverDefOf.cs" />

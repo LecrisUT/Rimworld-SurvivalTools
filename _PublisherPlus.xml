@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Excluded>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SurvivalTools\.git</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SurvivalTools\1.1\Patches\Core\Scenarios_Classic2.xml.bak</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SurvivalTools\1.2\Assemblies\SurvivalTools.pdb</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SurvivalTools\1.2\Patches\Core\Scenarios_Classic2.xml.bak</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SurvivalTools\Source</exclude>
+  </Excluded>
+</Configuration>
