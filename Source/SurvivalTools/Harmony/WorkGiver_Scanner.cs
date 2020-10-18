@@ -34,20 +34,20 @@ namespace SurvivalTools.Harmony
             }
         }
         [HarmonyPriority(1000)]
-        public static void Postfix(ref Job __result, Pawn pawn)
+        public static void Postfix(ref Job __result, Pawn __0)
         {
-            if (__result == null || !Settings.DisableNotToolWork || !ToolsFramework.Dictionaries.jobToolType.TryGetValue(__result.def, out var toolType) || !Dictionaries.SurvivalToolTypes[toolType] || !pawn.CanUseTools(out var tracker))
+            if (__result == null || !Settings.DisableNotToolWork || !ToolsFramework.Dictionaries.jobToolType.TryGetValue(__result.def, out var toolType) || !Dictionaries.SurvivalToolTypes[toolType] || !__0.CanUseTools(out var tracker))
                 return;
             if (tracker.UsedHandler.BestTool[toolType] != null)
                 return;
-            var map = pawn.MapHeld;
+            var map = __0.MapHeld;
             if (map != null)
             {
                 var reservation = map.reservationManager;
-                var faction = pawn.Faction;
+                var faction = __0.Faction;
                 var assignmentFilter = tracker.ToolAssignment.filter;
-                if (pawn.MapHeld.GetMapToolTracker().StoredToolInfos.Any(t => t.comp.CompProp.ToolTypes.Contains(toolType) && !t.tool.IsForbidden(pawn) && assignmentFilter.Allows(t.tool) &&
-                (reservation.ReservedBy(t.tool,pawn) || !reservation.IsReservedByAnyoneOf(t.tool, faction))))
+                if (__0.MapHeld.GetMapToolTracker().StoredToolInfos.Any(t => t.comp.CompProp.ToolTypes.Contains(toolType) && !t.tool.IsForbidden(__0) && assignmentFilter.Allows(t.tool) &&
+                (reservation.ReservedBy(t.tool, __0) || !reservation.IsReservedByAnyoneOf(t.tool, faction))))
                     return;
             }
 #if DEBUG
